@@ -1,0 +1,11 @@
+name: Build and publish image to Docker Hub
+on:
+   [workflow_dispatch]
+jobs:
+  publish_images:
+    runs-on: Mac
+    steps:
+      -name: checkout
+       uses: actions/checkout@v4
+      -name: build image
+       run: docker build ./api/ -t 
